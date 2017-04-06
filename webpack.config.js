@@ -6,7 +6,7 @@ module.exports = {
 	entry: [
 		'webpack-dev-server/client?http://127.0.0.1.8080',
 		'webpack/hot/only-dev-server',
-		'./src'
+		'./src/components/app.js'
 	],
 	output: {
 		path: path.join(__dirname, 'public'),
@@ -14,7 +14,8 @@ module.exports = {
 	},
 	resolve: {
 		modulesDirectories: ['node_modules', 'src'],
-		extensions: ['', '.js']
+		extensions: ['', '.js', '.jsx'],
+		alias: { 'react/lib/ReactMount': 'react-dom/lib/ReactMount' }
 	},
 	module: {
 		loaders: [
